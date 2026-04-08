@@ -5,6 +5,7 @@ WORKDIR /wbb
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
+ENV PYTHON_VERSION=3.9.18
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
     curl ca-certificates \
@@ -25,6 +26,8 @@ COPY uv.lock .
 FROM base
 
 ENV UV_NO_DEV=1
+ENV UV_PYTHON=python3.9
+
 RUN uv sync
 
 COPY . .
