@@ -10,6 +10,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     curl ca-certificates \
     git gcc build-essential \
     iputils-ping \
+    libxml2-dev libxslt-dev zlib1g-dev libffi-dev libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ADD https://astral.sh/uv/install.sh /uv-installer.sh
